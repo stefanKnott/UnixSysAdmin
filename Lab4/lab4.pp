@@ -151,97 +151,96 @@ user{ 'sknott':
 file {"/home/mscott":
 	ensure => "directory",
 	owner => "mscott",
-	source => "~/../etc/skel/"
-
+	source => "/etc/skel/"
 }
 
 file {"/home/dschrute":
 	ensure => "directory",
 	owner => "dschrute",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 
 }
 
 file {"/home/jhalpert":
 	ensure => "directory",
 	owner => "jhalpert",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/tflenderson":
 	ensure => "directory",
 	owner => "tflenderson",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/dphilbin":
 	ensure => "directory",
 	owner => "dphilbin",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/amartin":
 	ensure => "directory",
 	owner => "amartin",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/cbratton":
 	ensure => "directory",
 	owner => "cbratton",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/kmalone":
 	ensure => "directory",
 	owner => "kmalone",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/omartinez":
 	ensure => "directory",
 	owner => "omartinez",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/mpalmer":
 	ensure => "directory",
 	owner => "mpalmer",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/pbeesley":
 	ensure => "directory",
 	owner => "pbeesly",
-	source => "~/../etc/skel/",
+	source => "/etc/skel/",
 }
 
 file {"/home/kkapoor":
 	ensure => "directory",
 	owner => "kkapoor",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/abernard":
 	ensure => "directory",
 	owner => "abernard",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/plapin":
 	ensure => "directory",
 	owner => "plapin",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/shudson":
 	ensure => "directory",
 	owner => "shudson",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
 
 file {"/home/sknott":
 	ensure => "directory",
 	owner => "sknott",
-	source => "~/../etc/skel/"
+	source => "/etc/skel/"
 }
