@@ -1,158 +1,7 @@
-group { "managers":
-	ensure => "present",
+file {"/home":
+	ensure => "directory",
+	owner => "mscott",
 }
-
-group { "sales":
-	ensure => "present",
-}
-
-group { "accounting": 
-	ensure => "present",
-}
-
-user{ 'mscott':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['managers'],
-	home => '/home/mscott/',
-	shell => '/bin/bash',
-	uid => '1001',
-}
-
-user{ 'dschrute':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['managers'],
-	home => '/home/dschrute/',
-	shell => '/bin/bash',
-	uid => '1002',
-}
-
-user{ 'jhalpert':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['managers'],
-	home => '/home/jhalpert/',
-	shell => '/bin/bash',
-	uid => '1003',
-}
-
-user{ 'tflenderson':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['accounting'],
-	home => '/home/tflenderson/',
-	shell => '/bin/bash',
-	uid => '1004',
-}
-
-user{ 'dphilbin':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['accounting'],
-	home => '/home/philbin/',
-	shell => '/bin/bash',
-	uid => '1005',
-}
-
-user{ 'amartin':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['accounting'],
-	home => '/home/amartin/',
-	shell => '/bin/bash',
-	uid => '1006',
-}
-
-user{ 'cbratton':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['accounting'],
-	home => '/home/cbratton/',
-	shell => '/bin/bash',
-	uid => '1007',
-}
-
-user{ 'kmalone':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['accounting'],
-	home => '/home/kmalone/',
-	shell => '/bin/bash',
-	uid => '1008',
-}
-
-user{ 'omartinez':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['accounting'],
-	home => '/home/omartinez/',
-	shell => '/bin/bash',
-	uid => '1009',
-}
-
-user{ 'mpalmer':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['sales'],
-	home => '/home/mpalmer/',
-	shell => '/bin/bash',
-	uid => '1010',
-}
-
-user{ 'pbeesly':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['sales'],
-	home => '/home/pbeesly/',
-	shell => '/bin/bash',
-	uid => '1011',
-}
-
-user{ 'kkapoor':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['sales'],
-	home => '/home/kkapoor/',
-	shell => '/bin/bash',
-	uid => '1012',
-}
-
-user{ 'abernard':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['sales'],
-	home => '/home/abernard/',
-	shell => '/bin/bash',
-	uid => '1013',
-}
-
-user{ 'plapin':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['sales'],
-	home => '/home/plaplin/',
-	shell => '/bin/bash',
-	uid => '1014',
-}
-
-user{ 'shudson':
-	ensure => 'present',
-	password => 'ChangeMe',
-	groups => ['sales'],
-	home => '/home/shudson/',
-	shell => '/bin/bash',
-	uid => '1015',
-}
-
-user{ 'sknott':
-	ensure => 'present',
-	password => 'ChangeMe',
-	home => '/home/',
-	shell => '/bin/bash',
-	uid => '1016',
-}
-
 
 file {"/home/mscott":
 	ensure => "directory",
@@ -218,7 +67,7 @@ file {"/home/mpalmer":
 
 file {"/home/pbeesley":
 	ensure => "directory",
-	owner => "pbeesly",
+	owner => "pbeesley",
 	source => "/etc/skel/",
 }
 
@@ -236,13 +85,13 @@ file {"/home/abernard":
 
 file {"/home/plapin":
 	ensure => "directory",
-	owner => "plapin",
+	owner => "plaplin",
 	source => "/etc/skel/"
 }
 
 file {"/home/shudson":
 	ensure => "directory",
-	owner => "shudson",
+	owner => "shudon",
 	source => "/etc/skel/"
 }
 
@@ -250,4 +99,170 @@ file {"/home/sknott":
 	ensure => "directory",
 	owner => "sknott",
 	source => "/etc/skel/"
+}
+
+group { "managers":
+	ensure => "present",
+}
+
+group { "sales":
+	ensure => "present",
+}
+
+group { "accounting": 
+	ensure => "present",
+	gid 3,
+}
+
+user{ 'mscott':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '1',
+	groups =['managers']
+	home => '/home',
+	shell => '/bin/bash',
+	uid => '1',
+}
+
+user{ 'dschrute':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '2',
+	groups =['managers']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '2',
+}
+
+user{ 'jhalpert':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '3',
+	groups =['managers']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '3',
+}
+
+user{ 'tflenderson':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '4',
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '4',
+}
+
+user{ 'dphilbin':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '5',
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '5',
+}
+
+user{ 'amartin':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '6',
+	groups =['accounting']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '6',
+}
+
+user{ 'cbratton':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '7',
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '7',
+}
+
+user{ 'kmalone':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '8',
+	groups =['accounting']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '8',
+}
+
+user{ 'omartinez':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '9',
+	groups =['accounting']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '9',
+}
+
+user{ 'mpalmer':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '10',
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '10',
+}
+
+user{ 'pbeesly':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '11',
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '11',
+}
+
+user{ 'kkapoor':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '12',
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '12',
+}
+
+user{ 'abernard':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '13',
+	groups =['sales']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '13',
+}
+
+user{ 'plapin':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '14',
+	groups =['sales']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '14',
+}
+
+user{ 'shudson':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '15',
+	groups =['sales']
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '15',
+}
+
+user{ 'sknott':
+	ensure => 'present',
+	password => 'ChangeMe'
+	gid => '16',
+	home => 'path/to/home',
+	shell => '/bin/bash',
+	uid => '16',
 }
